@@ -127,7 +127,7 @@ public class Breakout extends GraphicsProgram {
                 ball.bounce();
                 //alert the brick it has been hit
                 if(((Brick) obj).brickLives > 0){
-                    ((Brick) obj).brickHit();
+                    obj.brickHit();
                 }else if (((Brick) obj).brickLives == 0){
                     remove(obj);
                 }

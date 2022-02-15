@@ -36,8 +36,10 @@ public class Brick extends GRect {
         super(x, y, WIDTH, HEIGHT);
 
         setFilled(true);
+        setFillColor(blue3);
+        this.bricklives = 0;
 
-        if (row == 0 || row == 1) {
+        if (row == 0 || row == 1 || row == 2) {
             this.brickLives = 0;
             setFillColor(blue3);
 
@@ -53,19 +55,35 @@ public class Brick extends GRect {
             this.brickLives = 2;
             setFillColor(purple3);
 
-        }else if(row == 2 || row == 3) {
-            this.brickLives = 0;
+        }else if(row == 9 || row == 10 || row == 11) {
+            this.brickLives = 2;
             setFillColor(red3);
 
         }
+        myRow = row;
     }
 
     public void brickHit() {
         loseBrickLife(this.brickLives);
     }
 
-    private void loseBrickLife(int myRow) {
+    public void loseBrickLife(int myRow) {
+
+        System.out.println("Hit a " + getColor() "brick.");
+
         this.brickLives = this.brickLives - 1;
+
+        if(this.brickLives == 1){
+
+            if(myRow == 9 || myRow == 10 || myRow == 11){
+                setFillColor(purple2);
+            }
+
+        }else if (this.brickLives == 2){
+
+        }else{
+
+        }
     }
 
     private void setCustomFill() {
