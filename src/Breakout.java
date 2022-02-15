@@ -5,6 +5,8 @@ import acm.program.GraphicsProgram;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
+//this is a test to see if GitHub will update the code.
+
 public class Breakout extends GraphicsProgram {
 
     public int bricksBroken = 0;
