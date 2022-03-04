@@ -5,6 +5,7 @@ import acm.program.GraphicsProgram;
 import svu.csc213.Dialog;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 
 public class Breakout extends GraphicsProgram {
@@ -57,6 +58,15 @@ public class Breakout extends GraphicsProgram {
         // make sure that the paddle doesn't go offscreen
         if((me.getX() < getWidth() - paddle.getWidth()/2)&&(me.getX() > paddle.getWidth() / 2)){
             paddle.setLocation(me.getX() - paddle.getWidth()/2, paddle.getY());
+        }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        switch(actionEvent.getActionCommand()){
+            case "Quit Game":
+                System.exit(0);
+                break;
         }
     }
 
@@ -170,6 +180,8 @@ public class Breakout extends GraphicsProgram {
 
         JButton quit = new JButton("Quit Game");
         add(quit,baseX,baseY+gameOverLBL.getHeight()+15);
+
+        addActionListeners();
     }
 
     public static void main(String[] args) {
