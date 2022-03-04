@@ -1,11 +1,11 @@
+import acm.graphics.GImage;
 import acm.graphics.GLabel;
 import acm.graphics.GObject;
 import acm.program.GraphicsProgram;
-
+import svu.csc213.Dialog;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
-
-//this is a test to see if GitHub will update the code.
 
 public class Breakout extends GraphicsProgram {
 
@@ -127,7 +127,7 @@ public class Breakout extends GraphicsProgram {
                 ball.bounce();
                 //alert the brick it has been hit
                 if(((Brick) obj).brickLives > 0){
-                    obj.brickHit();
+                    ((Brick) obj).brickHit();
                 }else if (((Brick) obj).brickLives == 0){
                     remove(obj);
                 }
@@ -147,7 +147,7 @@ public class Breakout extends GraphicsProgram {
         }else{
             gameOver();
         }
-            reset();
+        reset();
     }
 
     private void reset(){
@@ -157,9 +157,19 @@ public class Breakout extends GraphicsProgram {
     }
 
     private void gameOver(){
-        //clear out all bricks
-        //reset lives and score
-        reset();
+        //set position presets
+        int baseX = 300;
+        int baseY = 200;
+
+        //remove all GObjects from the screen.
+        removeAll();
+
+        //display a GLabel to display text for Game Over.
+        GLabel gameOverLBL = new GLabel("Game Over.");
+        add(gameOverLBL, baseX+10,baseY);
+
+        JButton quit = new JButton("Quit Game");
+        add(quit,baseX,baseY+gameOverLBL.getHeight()+15);
     }
 
     public static void main(String[] args) {

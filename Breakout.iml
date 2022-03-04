@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="4">
+<module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <orderEntry type="jdk" jdkName="16" jdkType="JavaSDK" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/Java Libraries/acm.jar!/" />
+          <root url="jar://$USER_HOME$/Documents/Documents/Programming/Dependencies/acm.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -16,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/Java Libraries/Dialog.jar!/" />
+          <root url="jar://$USER_HOME$/Documents/Documents/Programming/Dependencies/Dialog.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

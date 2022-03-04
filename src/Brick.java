@@ -37,25 +37,25 @@ public class Brick extends GRect {
 
         setFilled(true);
         setFillColor(blue3);
-        this.bricklives = 0;
+        this.brickLives = 0;
 
-        if (row == 0 || row == 1 || row == 2) {
+        if (row == 9 || row == 10 || row == 11) {
             this.brickLives = 0;
             setFillColor(blue3);
 
-        } else if (row == 3 || row == 4) {
+        } else if (row == 7 || row == 8) {
             this.brickLives = 1;
             setFillColor(green3);
 
         } else if (row == 5 || row == 6) {
             this.brickLives = 1;
-           setFillColor(yellow3);
+            setFillColor(yellow3);
 
-        } else if (row == 7 || row == 8) {
+        } else if (row == 3 || row == 4) {
             this.brickLives = 2;
             setFillColor(purple3);
 
-        }else if(row == 9 || row == 10 || row == 11) {
+        }else if(row == 0 || row == 1 || row == 2) {
             this.brickLives = 2;
             setFillColor(red3);
 
@@ -64,26 +64,43 @@ public class Brick extends GRect {
     }
 
     public void brickHit() {
-        loseBrickLife(this.brickLives);
+        loseBrickLife(this.myRow);
     }
 
     public void loseBrickLife(int myRow) {
 
-        System.out.println("Hit a " + getColor() "brick.");
+        System.out.println("Hit a " + getColor() + "brick.");
 
         this.brickLives = this.brickLives - 1;
 
-        if(this.brickLives == 1){
 
-            if(myRow == 9 || myRow == 10 || myRow == 11){
+        if(this.brickLives == 0) {
+
+            if (myRow == 9 || myRow == 10 || myRow == 11) {
+                setFillColor(blue2);
+            } else if (myRow == 7 || myRow == 8) {
+                setFillColor(green2);
+            } else if (myRow == 5 || myRow == 6) {
+                setFillColor(yellow2);
+            } else if (myRow == 3 || myRow == 4) {
                 setFillColor(purple2);
+            } else if (myRow == 0 || myRow == 1 || myRow == 2) {
+                setFillColor(red2);
             }
-
-        }else if (this.brickLives == 2){
-
-        }else{
-
+        }else if(this.brickLives == 1){
+            if (myRow == 9 || myRow == 10 || myRow == 11) {
+                setFillColor(blue1);
+            } else if (myRow == 7 || myRow == 8) {
+                setFillColor(green1);
+            } else if (myRow == 5 || myRow == 6) {
+                setFillColor(yellow1);
+            } else if (myRow == 3 || myRow == 4) {
+                setFillColor(purple1);
+            } else if (myRow == 0 || myRow == 1 || myRow == 2) {
+                setFillColor(red1);
+            }
         }
+
     }
 
     private void setCustomFill() {
